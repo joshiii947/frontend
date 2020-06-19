@@ -1,0 +1,26 @@
+.register-image {
+  margin-top: 50%;
+  border-radius: 200px;
+}
+.formdata {
+  margin-top: 50%;
+}
+.register-btn {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+.registerlink {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 30px;
+}
+.errmsg {
+  color: crimson;
+}

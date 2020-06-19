@@ -1,0 +1,46 @@
+.list-group {
+  padding: 0 0 0 10px;
+}
+.folderview {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.deleteicon {
+  margin-left: 50px !important;
+}
+.shareicon {
+  margin-left: 44px !important;
+}
+.cardbody {
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.jumbotron {
+  background-color: blueviolet;
+}
+.card-header {
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  width: 150px;
+  margin-left: 25%;
+}
+.folderdeleteicon {
+  margin-left: 81px !important;
+}
+.mediaMargin {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.logout-btn {
+  float: right;
+}

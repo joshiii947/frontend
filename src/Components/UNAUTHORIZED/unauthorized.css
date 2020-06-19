@@ -1,0 +1,10 @@
+.backgroundimg{
+    background-image: url("https://ak.picdn.net/shutterstock/videos/1019666437/thumb/12.jpg");
+    width: 800px;
+    height: 700px;
+    background-repeat: no-repeat;
+    margin-left: 30%;
+    margin-top: 10%;
+    z-index: -1;
+    overflow: hidden;
+}
