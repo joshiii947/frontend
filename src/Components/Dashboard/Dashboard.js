@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 import { Modal, Button, ModalBody, Label, Input, Form, FormGroup, Card, CardBody } from 'reactstrap';
 import './styles.css'
 import axios from 'axios'
@@ -191,6 +191,7 @@ class Dashboard extends React.Component {
 
 
     render() {
+        if(localStorage.getItem('token')!==undefined){
 
         return (
             <>
@@ -283,6 +284,12 @@ class Dashboard extends React.Component {
 
             </>
         )
+    }
+    else{
+        return (
+            <Redirect to="/" />
+        )
+    }
     }
 
 }

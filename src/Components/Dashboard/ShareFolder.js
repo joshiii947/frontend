@@ -1,6 +1,8 @@
 import React from 'react'
 import { PORTADDRESS } from '../fileconstant'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
+
 
 
 class ShareFolder extends React.Component {
@@ -91,6 +93,7 @@ class ShareFolder extends React.Component {
             }
         })
 
+        if(localStorage.getItem('token')!=undefined){
 
         return (
             <>
@@ -99,6 +102,12 @@ class ShareFolder extends React.Component {
 
             </>
         )
+        }
+        else{
+            return(
+                <Redirect to="/" />
+            )
+        }
     }
 }
 

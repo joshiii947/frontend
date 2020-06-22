@@ -3,7 +3,7 @@ import { PORTADDRESS } from '../fileconstant'
 import axios from 'axios'
 import qs from 'qs'
 import Header from '../Dashboard/Header'
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 import '../Dashboard/styles.css'
 import { Card, CardBody, CardFooter, CardTitle, CardSubtitle } from 'reactstrap'
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
@@ -120,7 +120,7 @@ class SharedFolder extends React.Component {
             )
         })
 
-
+        if(localStorage.getItem('token')!=undefined){
         return (
 
             <>
@@ -148,6 +148,7 @@ class SharedFolder extends React.Component {
                     <div className="col-md-9">
 
                         <div classsName="row">
+                        {this.state.folders.length == 0  &&  <div><Card className="card-empty"><h5>Sorry nothing has been shared with you</h5> </Card></div>}
 
                             {allfolders}
 
@@ -163,6 +164,12 @@ class SharedFolder extends React.Component {
 
             </>
         )
+        }
+        else{
+            return(
+                <Redirect to="/" />
+            )
+        }
     }
 }
 

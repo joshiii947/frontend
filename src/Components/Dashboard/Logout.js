@@ -1,21 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 
-const Logout = () => {
+class Logout extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            emptyLocalStorage:false
+        }
+    }
 
-
-    useEffect(() => {
+    componentDidMount=()=>{
         localStorage.clear()
+        sessionStorage.clear()
 
-    }, [])
+        this.setState({
+            emptyLocalStorage:true
+        })
+    }
 
-    return (
-        <>
-            <Redirect to="/" />
-        </>
-    )
+    render(){
+        return(
+            <>
 
+            {this.state.emptyLocalStorage && <Redirect to="/" /> }
+
+            </>
+                    
+   
+        )
+    }
 }
 
 

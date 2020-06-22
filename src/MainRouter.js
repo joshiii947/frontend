@@ -25,6 +25,7 @@ function MainRouter() {
                 <Route exact path="/sharefolderwithuser" component={ShareWithFolder} />
                 <Route exact path="/unauthorized" component={Unauthorized} />
                 <Route exact path="/logout" component={Logout} />
+                
 
             </Switch>
         </div>

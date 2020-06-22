@@ -1,6 +1,8 @@
-import React from 'react'
-import { PORTADDRESS } from '../fileconstant'
-import axios from 'axios'
+import React from 'react';
+import { PORTADDRESS } from '../fileconstant';
+import axios from 'axios';
+import {Redirect} from 'react-router-dom';
+
 
 
 class Sharefile extends React.Component {
@@ -72,7 +74,7 @@ class Sharefile extends React.Component {
         }
     }
 
-
+   
 
     render() {
 
@@ -96,6 +98,7 @@ class Sharefile extends React.Component {
                 )
             }
         })
+        if(localStorage.getItem('token')!=undefined){
 
         return (
 
@@ -106,6 +109,12 @@ class Sharefile extends React.Component {
             </>
 
         )
+        }
+        else{
+            return(
+                <Redirect to="/" />
+            )
+        }
     }
 }
 

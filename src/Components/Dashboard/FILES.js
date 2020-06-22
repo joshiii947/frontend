@@ -10,6 +10,9 @@ import IconButton from '@material-ui/core/IconButton';
 import ShareIcon from '@material-ui/icons/Share';
 import { PORTADDRESS } from '../fileconstant'
 import Sharefile from './Sharefile';
+import {Redirect} from 'react-router-dom'
+import EmptyFolder from './EmptyFolder'
+
 
 
 class Files extends React.Component {
@@ -69,10 +72,13 @@ class Files extends React.Component {
                 </div>
             )
         })
+        if(localStorage.getItem('token')!==undefined){
+
 
         return (
             <>
 
+            
 
                 {allfiles}
 
@@ -87,6 +93,13 @@ class Files extends React.Component {
 
             </>
         )
+        }
+        else{
+            return(
+
+                  <Redirect to="/" />
+            )
+        }
     }
 }
 

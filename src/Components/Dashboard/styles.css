@@ -44,3 +44,9 @@
 .logout-btn {
   float: right;
 }
+.emptyfolder{
+  background-image: url('https://previews.123rf.com/images/yuliaterentyeva/yuliaterentyeva1505/yuliaterentyeva150500134/42026380-icon-of-the-open-and-empty-folder-in-classic-color.jpg');
+  background-repeat: no-repeat;
+  width: fit-content;
+  height: fit-content;
+}

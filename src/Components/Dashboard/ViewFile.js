@@ -4,6 +4,8 @@ import axios from 'axios'
 import qs from 'qs'
 import './styles.css'
 import Header from './Header'
+import {Redirect} from 'react-router-dom'
+
 
 const File = (props) => {
 
@@ -23,6 +25,7 @@ const File = (props) => {
             })
             .catch((err) => console.log(err))
     }
+    if(localStorage.getItem('token')!=undefined){
 
     return (
         <>
@@ -38,6 +41,12 @@ const File = (props) => {
 
         </>
     )
+    }
+    else{
+        return(
+            <Redirect to ="/" />
+        )
+    }
 
 
 }

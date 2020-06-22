@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 import { Modal, Button, ModalBody, Label, Input, Card, CardFooter, CardTitle, Form, FormGroup, CardBody, CardSubtitle, ModalFooter } from 'reactstrap';
 import './styles.css'
 import axios from 'axios'
@@ -87,7 +87,7 @@ class FOLDERS extends React.Component {
                 </div>
             )
         })
-
+        if(localStorage.getItem('token')!=undefined){
 
         return (
             <>
@@ -106,6 +106,12 @@ class FOLDERS extends React.Component {
 
             </>
         )
+        }
+        else{
+            return (
+                <Redirect to ="/" />
+            )
+        }
     }
 }
 

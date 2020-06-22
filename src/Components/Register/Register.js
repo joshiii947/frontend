@@ -93,6 +93,7 @@ class Register extends React.Component {
 
             axios({ method: 'post', url: `${PORTADDRESS}user/register`, data: qs.stringify({ name: name, username: username, email: email, password: password }), headers: { 'content-type': 'application/x-www-form-urlencoded;charset=utf-8' } })
             .then((result) => {
+                console.log(result)
                 if (result['data']['errmsg'] !== undefined) {
                     toast.error(result['data']['errmsg'].split('dup key:')[1].split(':')[0].split(' ')[2] + ' is already Registered')
                 }

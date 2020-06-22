@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './styles.css'
 
 
 const Header = () => {
 
+
+    if(localStorage.getItem('token')!=undefined){
     return (
         <div className="jumbotron">
             <h5>WELCOME {localStorage.getItem('username')}</h5>
@@ -15,6 +17,12 @@ const Header = () => {
             </div>
         </div>
     )
+    }
+    else{
+        return(
+            <Redirect to="/" />
+        )
+    }
 }
 
 

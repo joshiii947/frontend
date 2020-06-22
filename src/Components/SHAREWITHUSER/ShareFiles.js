@@ -3,7 +3,7 @@ import { PORTADDRESS } from '../fileconstant'
 import Header from '../Dashboard/Header'
 import axios from 'axios'
 import qs from 'qs'
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 import '../Dashboard/styles.css'
 import { Card, CardBody, CardFooter, CardTitle, CardSubtitle } from 'reactstrap'
 import Tooltip from '@material-ui/core/Tooltip';
@@ -81,6 +81,8 @@ class ShareFiles extends React.Component {
             )
         })
 
+
+        if(localStorage.getItem('token')!=undefined){
         return (
             <>
                 <Header />
@@ -104,6 +106,7 @@ class ShareFiles extends React.Component {
                     </div>
 
                     <div className="col-md-9">
+                    {this.state.files.length == 0  &&  <div><Card className="card-empty"><h5>Sorry nothing has been shared with you </h5> </Card></div>}      
 
                         {allfiles}
 
@@ -113,6 +116,12 @@ class ShareFiles extends React.Component {
 
             </>
         )
+        }
+        else{
+            return(
+                <Redirect to="/" />
+            )
+        }
     }
 }
 
